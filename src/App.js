@@ -12,7 +12,7 @@ import Register from "./components/Register/Register";
 
 const app = new Clarifai.App({
     apiKey: '23037553394245a2bbf8a1cfb88deaca'
-})
+});
 
 const particlesOptions = {
     particles: {
@@ -24,7 +24,7 @@ const particlesOptions = {
             }
         }
     }
-}
+};
 
 class App extends Component {
     constructor(props) {
@@ -34,9 +34,27 @@ class App extends Component {
             imageUrl: '',
             box: {},
             route: 'signin',
-            isSignedIn: false
-        }
-    }
+            isSignedIn: false,
+            user: {
+                id: '',
+                name: '',
+                email: '',
+                entries: 0,
+                joined: ''
+            }
+        };
+    };
+
+    loadUser = (data) => {
+        this.setState({
+            user: {
+                id: data.id,
+                name: data.name,
+                email: data.email,
+                entries: data.entries,
+                joined: data.joined
+            }});
+    };
 
     calculateFaceLocation = (data) => {
         const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -48,17 +66,17 @@ class App extends Component {
             topRow: clarifaiFace.top_row * height,
             rightCol: width - (clarifaiFace.right_col * width),
             bottomRow: height - (clarifaiFace.bottom_row * height)
-        }
-    }
+        };
+    };
 
     displayFaceBox = (box) => {
         this.setState({box: box})
-    }
+    };
 
     onInputChange = (event) => {
         console.log(event.target.value)
         this.setState({input: event.target.value})
-    }
+    };
 
     onButtonSubmit = () => {
         console.log('click')
@@ -69,14 +87,14 @@ class App extends Component {
                 this.state.input)
             .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
             .catch(err => console.log(err))
-    }
+    };
 
     onRouteChange = (route) => {
         if (route === 'signout') {
-            this.setState({isSignedIn: false})
+            this.setState({isSignedIn: false});
         } else if (route === 'home') {
-            this.setState({isSignedIn: true})
-        } this.setState({route: route})}
+            this.setState({isSignedIn: true});
+        } this.setState({route: route})};
 
     render() {
         const {isSignedIn, imageUrl, route, box} = this.state;
@@ -88,19 +106,19 @@ class App extends Component {
                 {route === 'home'
                     ? <div>
                         <Logo/>
-                        <Rank/>
+                        <Rank name={this.state.user.name} entries={this.state.user.entries} />
                         <ImageLinkForm
                             onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
                         <FaceRecognition box={box} imageUrl={imageUrl}/>
                     </div>
                     : (
                         route === 'signin'
-                            ? <SignIn onRouteChange={this.onRouteChange}/>
-                            : <Register onRouteChange={this.onRouteChange}/>
+                            ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+                            : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
                     )}
             </div>
-        )
-    }
+        );
+    };
 }
 
-export default App
+export default App;
