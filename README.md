@@ -1,3 +1,25 @@
+<hr>
+
+<h3>Instructions to logging in:</h3>
+
+<table>
+  <tr>
+    <th>user email</th>
+    <th>password</th>
+  </tr>
+  <tr>
+    <td>test@test.com</td>
+    <td>password</td>
+  </tr>
+</table>
+
+You can also register for a free account, you won't recieve an email notification, or your data being sold or anything like that.
+This was a personal project created for learning purposes.
+
+To try this out, you can <a href="url">click here</a>
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
