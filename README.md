@@ -14,6 +14,8 @@
 </table>
 
 You can also register for a free account, you won't recieve an email notification, or your data being sold or anything like that.
+You can make up any email you like.
+
 This was a personal project created for learning purposes.
 
 To get started you can <a href="https://seycileli.github.io/facerecognitionapp/">click here</a>
