@@ -16,7 +16,7 @@
 You can also register for a free account, you won't recieve an email notification, or your data being sold or anything like that.
 This was a personal project created for learning purposes.
 
-To try this out, you can <a href="url">click here</a>
+To get started you can <a href="https://seycileli.github.io/facerecognitionapp/">click here</a>
 
 <hr>
 
