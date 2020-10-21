@@ -10,6 +10,10 @@
   <tr>
     <td>test@test.com</td>
     <td>password</td>
+    <tr>
+    <td>sey@test.com</td>
+    <td>test</td>
+  </tr>
   </tr>
 </table>
 
