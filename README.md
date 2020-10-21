@@ -12,7 +12,7 @@
     <td>password</td>
     <tr>
     <td>sey@test.com</td>
-    <td>test</td>
+    <td>zxc</td>
   </tr>
   </tr>
 </table>
