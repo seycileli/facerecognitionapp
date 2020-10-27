@@ -1,3 +1,8 @@
+<h3>Face Recognition App:</h3>
+
+<h4>What is it?</h4>
+
+
 <hr>
 
 <h3>Instructions to logging in:</h3>
