@@ -2,6 +2,7 @@
 
 <h4>What is it?</h4>
 
+<p>The application communicates with the Clarifai API to help detect human faces from images and coordinates the locations of where those faces appear with a bounding box.</p>
 
 <hr>
 
